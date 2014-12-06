@@ -1,0 +1,411 @@
+/*
+ * Web Starter Kit
+ *
+ * Multi-screen layout styles for your page. Brought to you by the
+ * Web Starter Kit team.
+ *
+ */
+@import '_h5bp';
+
+/*
+ * Visual Style Guide styles
+ * Remove if you prefer to use a CSS library, like Bootstrap
+ */
+@import 'components/components';
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url(../images/bg/body.jpg);
+}
+
+body {
+  position: relative;
+  font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  background-color: #fff;
+  box-sizing: border-box;
+  min-height: 100%;
+}
+
+body.open {
+  overflow: hidden;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  li {
+    padding: 0;
+    margin: 0;
+    &:before {
+      display: none;
+    }
+  }
+}
+.promote-layer {
+  /*
+  This may promote the layer to a composited
+  layer.
+
+  Replace with will-change when available
+
+  #perfmatters
+  */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.navdrawer-container {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #3367D6;
+  color: #fefefe;
+  transform: translate(-250px, 0);
+  overflow-y: auto;
+}
+
+.navdrawer-container.open {
+  transform: translate(0, 0);
+}
+
+.app-bar,
+.navdrawer-container.opened,
+main {
+  transition: transform 0.3s ease-out;
+}
+
+.navdrawer-container h4,
+.navdrawer-container ul li a {
+  height: 60px;
+  padding: 17px 20px;
+  line-height: 1.4;
+}
+
+.navdrawer-container h4 {
+  background-color: white;
+  color: #3367D6;
+}
+
+.navdrawer-container ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.navdrawer-container ul li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  -webkit-transition: background-color 0.2s ease-out;
+          transition: background-color 0.2s ease-out;
+  white-space: nowrap;
+}
+
+.navdrawer-container ul li {
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: white;
+  padding: 0;
+}
+
+.navdrawer-container ul li::before {
+  content: none;
+}
+
+.navdrawer-container ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navdrawer-container ul li a:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+  outline: 0;
+}
+
+.navdrawer-container ul li a:active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+main {
+  margin: 0 auto;
+  /* Height of the header */
+  padding: 60px 16px 16px 16px;
+  min-height: 100%;
+}
+
+footer {
+  margin: 0 auto;
+}
+
+/** Larger Screens - desktops and tablets **/
+@media all and (min-width: 990px) {
+  .app-bar {
+    position: relative;
+  }
+
+  .app-bar.open,
+  .app-bar.open ~ main {
+    -webkit-transform: translate(0px, 0);
+            transform: translate(0px, 0);
+  }
+
+  .app-bar-container {
+    display: block;
+    height: 130px;
+    max-width: 864px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    background-color: #4285f4;
+  }
+
+  .app-bar .logo {
+    float: left;
+    margin: 0;
+    padding: 0;
+    line-height: 130px;
+    font-size: 46px;
+  }
+
+  .app-bar-actions {
+    float: right;
+  }
+
+  .app-bar::after {
+    content: ' ';
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+  }
+
+  button.menu {
+    display: none;
+  }
+
+  .navdrawer-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    -webkit-transition: none;
+            transition: none;
+    overflow-y: auto;
+  }
+
+  .navdrawer-container h4 {
+    display: none;
+  }
+
+  .navdrawer-container ul {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 864px;
+    margin: 0 auto;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .navdrawer-container ul li {
+    border: none;
+  }
+
+  main,
+  footer {
+    max-width: 864px;
+    padding-top: 0;
+    min-height: initial;
+  }
+
+  body {
+    overflow-y: scroll;
+  }
+}
+
+.tooltip {
+  position:relative; /* make span relative to anchor */
+  text-decoration:none; /* no underline */
+  cursor:pointer; /* make cursor point */
+  span {
+    position:absolute; /* AP it */
+    bottom:66px; /* FADE IN/OUT BEGIN */
+    left:50%; /* CENTER TOOLTIP */
+    margin-left:-72px; /* CENTER TOOLTIP */
+    width:220px; /* tootip width */
+    opacity:0; /* HIDE TOOLTIP in modern browsers */
+    visibility:hidden; /* HIDE TOOLTIP in IE */
+    padding:10px 5px; /* padding */
+    color:#fff; /* text color */
+    font-size: 70%;
+    text-align:center; /* center text */
+    pointer-events:none; /* no unintended tooltip popup for modern browsers */
+    border-radius:6px; /* round corners */
+    text-shadow:1px 1px 2px rgba(0, 0, 0, 0.6); /* text shadow */
+    background-color: grey;
+    background:rgb(31,23,23); /* IE6/7/8 */
+    background:rgba(31,23,23,.8); /* modern browsers */
+    border:2px solid rgb(255,255,255); /* IE6/7/8 */
+    border:2px solid rgba(255,255,255,.8); /* modern browsers */
+    box-shadow:0px 2px 4px rgba(0,0,0,0.5); /* shadow */
+    transition:all 0.3s ease-in-out; /* animate tooltip */
+    &:before,
+    &:after {
+      content:''; /* add html content */
+      position:absolute; /* AP bottom triangle */
+      bottom:-13px; /* position bottom triangle */
+      left:50%; /* center bottom triangle */
+      margin-left:-12px; /* center bottom triangle */
+      border-left:12px solid transparent; /* build bottom triangle */
+      border-right:12px solid transparent; /* build bottom triangle */
+      border-top:12px solid rgb(255,255,255); /* build bottom triangle IE6/7/8 */
+      border-top:12px solid rgba(255,255,255,.8); /* build bottom triangle modern browsers */     
+    }
+    &:after {
+      bottom:-10px; /* position top triangle */
+      margin-left:-10px; /* center top triangle */
+      border-width:10px; /* build top triangle */
+      border-top:10px solid rgb(31,23,23); /* build top triangle IE6/7/8 */
+      border-top:10px solid rgba(31,23,23,.8); /* build top triangle modern browsers */
+    }
+    &:hover {
+      visibility:hidden; /* hide tooltip when moving from link to span in IE */
+    }
+  }
+  &:hover {
+    span {
+      opacity:1; /* REVEAL TOOLTIP in modern browsers */
+      bottom:44px; /* FADE IN/OUT END */
+      visibility:visible; /* REVEAL TOOLTIP in IE */
+    }
+  }
+}
+.tooltip span.dif { /* different width tooltip */
+  width:190px; /* width */
+  margin-left:-102px; /* center it */
+}
+@media screen and (min-device-width:320px) and (max-device-width:768px) {.tooltip span{display:none;}.tooltip:hover span{display:block;} } /* iPad & iPhone simulate :hover */
+
+
+
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: url(/fonts/RobotoCondensed-Light.eot);
+  src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'), url(/fonts/RobotoCondensed-Light.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-Light.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/RobotoCondensed-Regular.eot);
+  src: local('Roboto Condensed Regular'), local('RobotoCondensed-Regular'), url(/fonts/RobotoCondensed-Regular.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src: url(/fonts/RobotoCondensed-Bold.eot);
+  src: local('Roboto Condensed Regular'), local('RobotoCondensed-Bold'), url(/fonts/RobotoCondensed-Bold.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-Bold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: italic;
+  font-weight: 300;
+  src: url(/fonts/RobotoCondensed-LightItalic.eot);
+  src: local('Roboto Condensed Light Italic'), local('RobotoCondensed-LightItalic'), url(/fonts/RobotoCondensed-LightItalic.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-LightItalic.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: italic;
+  font-weight: 400;
+  src: url(/fonts/RobotoCondensed-Italic.eot);
+  src: local('Roboto Condensed Italic'), local('RobotoCondensed-Italic'), url(/fonts/RobotoCondensed-Italic.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-Italic.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: italic;
+  font-weight: 700;
+  src: url(/fonts/RobotoCondensed-BoldItalic.eot);
+  src: local('Roboto Condensed Bold Italic'), local('RobotoCondensed-BoldItalic'), url(/fonts/RobotoCondensed-BoldItalic.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-BoldItalic.woff) format('woff');
+}
+header {
+  height: 60px;
+  width: 100%;
+  background-image: url(../images/bg/header.jpg);
+  nav {
+    width: 864px;
+    background-color: transparent !important;
+    margin: 0 auto;
+  }
+}
+main {
+  background-color: #fff;
+  padding: 60px 0 0;
+}
+.table-1 {
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-image: url(../images/table-1.jpg);
+  height: 450px;
+  margin: 0 auto 50px;
+  position: relative;
+  .logo {
+    padding: 10px;
+    display: inline-block;
+    border: 5px solid #000;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 140%;
+    font-weight: bold;
+  }
+  ul {
+    position: absolute;
+    left: 15px;
+    bottom: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  .price {
+    display: inline-block;
+    font-size: 140%;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 5px solid #000;
+    background-color: yellow;
+    position: absolute;
+    bottom: 100px;
+    right: 45px;
+    color: #000;
+    cursor: pointer;
+  }
+
+}
+.table-2 {
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: block;
+  }
+}
+
+footer {
+  background-color: #fff;
+}
