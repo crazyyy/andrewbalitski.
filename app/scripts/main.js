@@ -42,7 +42,7 @@ $(function () {
  * Licensed under the MIT license:
  *   http://www.opensource.org/licenses/mit-license.php
  */
-
+ 
 jQuery(function ($) {
 	var contact = {
 		message: null,
