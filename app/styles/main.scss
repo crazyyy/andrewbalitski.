@@ -17,6 +17,7 @@ html,
 body {
   width: 100%;
   height: 100%;
+  color: #000;
   margin: 0;
   padding: 0;
   background-image: url(../images/bg/body.jpg);
@@ -354,16 +355,18 @@ header {
   }
 }
 main {
-  background-color: #fff;
+  /* background-color: #fff; */
   padding: 60px 0 0;
 }
 .table-1 {
+  background-color: #fff;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-image: url(../images/table-1.jpg);
   height: 450px;
   margin: 0 auto 50px;
   position: relative;
+  border-bottom: 15px solid #fff;
   .logo {
     padding: 10px;
     display: inline-block;
@@ -401,11 +404,325 @@ main {
     margin: 0;
     padding: 0;
   }
-  li {
+  img {
+    position: absolute;
+    border: 5px solid #fff;
+    transition: all 0.5s;
+  }
+  h5 {
+    background-color: #FFFAF6;
+    position: absolute;
+    text-align: center;
+    font-size: 160%;
+    padding: 15px;
+    font-weight: normal;
+    border: 5px solid #000;
+    transition: all 0.5s;
+  }
+  span {
+    font-weight: bold;
     display: block;
+    font-size: 140%;
+    line-height: 1.5;    
+    position: absolute;
+    text-shadow: 2px 2px 4px #fff;
+  }
+  .list-1 {
+    z-index: 5;
+    height: 600px;
+    img {
+      width: 590px;
+      height: 590px;
+      left: 0;
+      top: 0;
+    }
+    h5 {
+      width: 300px;
+      bottom: -20px;
+      left: 330px;
+    }
+  }
+  .list-2 {
+    height: 795px;
+    z-index: 2;
+    top: -200px;
+    img {
+      right: 0;
+      top: 0;
+      width: 785px;
+      height: 785px;
+    }
+    h5 {
+      width: 300px;
+      bottom: 40px;
+      left: 40px;
+    }
+  }
+  .list-3 {
+    height: 864px;
+    top: -200px;
+    img {
+      width: 874px;
+      height: 874px;
+    }
+    h5 {
+      width: 300px;
+      bottom: 70px;
+      right: 70px;
+    }
+  }
+  .list-4 {
+    height: 575px;
+    top: -195px;
+    img {
+      width: 565px;
+      height: 565px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    span {
+      width: 280px;
+      padding: 120px 10px;
+      top: 0;
+      right: 0;
+    }
+    h5 {
+      bottom: 30px;
+      left: 30px;
+    }
+  }
+  .list-5 {
+    height: 533px;
+    top: -420px;
+    img {
+      width: 523px;
+      height: 523px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    span {
+      width: 340px;
+      padding: 120px 10px 60px;
+      left: 0;
+      bottom: 50px;
+      text-align: right;
+    }
+    h5 {
+      bottom: 20px;
+      left: 355px;
+    }
+  }
+}
+.table-3 {
+  height: 760px;
+  position: relative;
+  top: -420px;
+  img {
+    width: 750px;
+    height: 750px;
+    border: 5px solid #fff;
+    position: absolute;
+    left: 52px;
+    top: 0;
+  }
+  .inner {
+    width: 760px;
+    position: absolute;
+    bottom: 20px;
+    left: 57px;
+    z-index: 10;
+    .inner-block {
+      background-color: #FFFAF6;
+      display: inline-block;
+      width: 350px;
+      margin: 0 10px;
+      padding: 15px;
+      float: left;
+    }
+    .inner-block-1 {
+      text-align: center;
+      li {
+        margin-bottom: 15px;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
   }
 }
 
 footer {
   background-color: #fff;
+}
+
+
+/*
+ * SimpleModal Contact Form
+ * http://simplemodal.com
+ *
+ * Copyright (c) 2013 Eric Martin - http://ericmmartin.com
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ */
+
+/* Overlay */
+
+#contact-overlay {
+    background-color: #000;
+}
+
+/* Container */
+
+#contact-container {
+    font: 16px/22px 'Trebuchet MS', Verdana, Arial;
+    text-align: left;
+    width: 450px;
+    .contact-content {
+        background-color: #333;
+        color: #ddd;
+        height: 40px;
+    }
+    h1 {
+        color: #d76300;
+        font-size: 20px;
+        line-height: 20px;
+        margin: 0;
+        padding: 0 0 6px 12px;
+        text-align: left;
+    }
+    .contact-loading {
+        background: url(../img/contact/loading.gif) no-repeat;
+        height: 55px;
+        margin: -14px 0 0 190px;
+        padding: 0;
+        position: absolute;
+        width: 54px;
+        z-index: 8000;
+    }
+    .contact-message {
+        text-align: center;
+    }
+    .contact-error {
+        background: #000;
+        border: 2px solid #ccc;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 18px;
+        margin: 0 auto;
+        padding: 2px;
+        width: 92%;
+    }
+    br {
+        clear: both;
+    }
+    form {
+        margin: 0;
+        padding: 0;
+    }
+    label {
+        clear: left;
+        display: block;
+        float: left;
+        font-weight: bold;
+        padding-right: 4px;
+        text-align: right;
+        width: 100px;
+    }
+    .contact-input {
+        background: #eee;
+        border: 1px solid #fff;
+        font-family: 'Trebuchet MS', Verdana, Arial;
+        float: left;
+        padding: 2px;
+        margin: 2px;
+        width: 300px;
+    }
+    textarea {
+        height: 114px;
+    }
+    .contact-cc {
+        cursor: default;
+        font-size: 14px;
+        vertical-align: top;
+    }
+    .contact-top {
+        background-color: #333;
+        height: 13px;
+        margin: 0;
+        padding: 0;
+        -webkit-border-top-left-radius: 8px;
+        -webkit-border-top-right-radius: 8px;
+        -moz-border-radius-topleft: 8px;
+        -moz-border-radius-topright: 8px;
+        border-radius: 8px 8px 0 0;
+    }
+    .contact-bottom {
+        background-color: #333;
+        font-size: 12px;
+        height: 13px;
+        line-height: 12px;
+        text-align: center;
+        -webkit-border-bottom-right-radius: 8px;
+        -webkit-border-bottom-left-radius: 8px;
+        -moz-border-radius-bottomright: 8px;
+        -moz-border-radius-bottomleft: 8px;
+        border-radius: 0 0 8px 8px;
+        a {
+            color: #666;
+            position: relative;
+            top: -4px;
+            text-decoration: none;
+            &:link, &:active, &:visited {
+                color: #666;
+                position: relative;
+                top: -4px;
+                text-decoration: none;
+            }
+            &:hover {
+                color: #888;
+            }
+        }
+    }
+    .contact-button {
+        background: #d76300;
+        border: 0;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        height: 26px;
+        margin: 4px 0 0 4px;
+        text-align: center;
+        vertical-align: middle;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        &:hover {
+            background: #f49000;
+        }
+    }
+    a.modal-close {
+        color: #999;
+        font-size: 18px;
+        font-weight: bold;
+        position: absolute;
+        text-decoration: none;
+        right: 8px;
+        top: 0px;
+        &:link, &:active, &:visited {
+            color: #999;
+            font-size: 18px;
+            font-weight: bold;
+            position: absolute;
+            text-decoration: none;
+            right: 8px;
+            top: 0px;
+        }
+        &:hover {
+            color: #ccc;
+        }
+    }
 }
