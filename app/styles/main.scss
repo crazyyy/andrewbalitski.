@@ -400,6 +400,8 @@ main {
 
 }
 .table-2 {
+  height: 2945px;
+  overflow: hidden;
   ul {
     margin: 0;
     padding: 0;
@@ -518,7 +520,7 @@ main {
 .table-3 {
   height: 760px;
   position: relative;
-  top: -420px;
+  /* top: -420px; */
   img {
     width: 750px;
     height: 750px;
@@ -555,6 +557,14 @@ main {
 
 footer {
   background-color: #fff;
+  text-align: center;
+  p {
+    padding: 10px 0 0;
+  }
+  a{
+    color: #000;
+    text-decoration: none;
+  }
 }
 
 
@@ -725,4 +735,40 @@ footer {
             color: #ccc;
         }
     }
+}
+.ss-form-container {
+  width: 100%;
+  h6 {
+    margin: 0 0 5px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 18px;
+  }
+  label {
+    width: 100%;
+    font-size: 14px;
+  }
+  input,
+  textarea {
+    width: 96%;
+    padding: 5px 2%;
+    font-size: 14px;
+    margin: 0 0 5px;
+    border-radius: 3px;
+  }
+  textarea {
+    height: 72px;
+  }
+  input[type=submit]{
+    background-color: transparent;
+    background-image: url(../images/bg/header.jpg);
+    border: 1px solid #000;
+    color: #fff;
+    transition: all 0.5s;
+    font-weight: bold;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
 }
